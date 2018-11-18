@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1653.821 152.65">
+  <defs>
+    <style>
+      .a {
+        fill: #af5e53;
+      }
+
+      .b {
+        fill: #c03e3e;
+      }
+
+      .c {
+        fill: #ee652e;
+      }
+
+      .d {
+        fill: #fcb1ab;
+      }
+
+      .e {
+        fill: #cf863d;
+      }
+
+      .f {
+        fill: #aab190;
+      }
+
+      .g {
+        fill: #7f9cbb;
+      }
+
+      .h {
+        fill: #bda792;
+      }
+
+      .i {
+        fill: #c45655;
+      }
+    </style>
+  </defs>
+  <title>CPch</title>
+  <rect class="a" x="507.114" y="283.123" width="168.84" height="152.65" transform="translate(1049.978 435.772) rotate(180)"/>
+  <rect class="b" x="694.783" y="283.123" width="168.84" height="152.65" transform="translate(1425.317 435.772) rotate(180)"/>
+  <rect class="c" x="881.139" y="283.123" width="168.84" height="152.65" transform="translate(1798.028 435.772) rotate(180)"/>
+  <rect class="d" x="133.089" y="283.123" width="168.84" height="152.65" transform="translate(301.929 435.772) rotate(180)"/>
+  <rect class="e" x="1059.779" y="283.123" width="168.84" height="152.65" transform="translate(2155.308 435.772) rotate(180)"/>
+  <rect class="f" x="1420.17" y="283.123" width="168.84" height="152.65" transform="translate(2876.091 435.772) rotate(180)"/>
+  <rect class="g" x="1618.071" y="283.123" width="168.84" height="152.65" transform="translate(3271.893 435.772) rotate(180)"/>
+  <rect class="h" x="1238.419" y="283.123" width="168.84" height="152.65" transform="translate(2512.588 435.772) rotate(180)"/>
+  <rect class="i" x="319.445" y="283.123" width="168.84" height="152.65" transform="translate(674.64 435.772) rotate(180)"/>
+</svg>

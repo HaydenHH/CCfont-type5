@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG-1</title>
+	<script language="javascript">
+	function preview(oper)
+	{
+	if (oper < 10){
+	bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+	sprnstr="<!--startprint"+oper+"-->";//设置打印开始区域
+	eprnstr="<!--endprint"+oper+"-->";//设置打印结束区域
+	prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html
+	prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+	window.document.body.innerHTML=prnhtml;
+	window.print();
+	window.document.body.innerHTML=bdhtml;
+	} else {
+	window.print();
+	}
+	}
+	</script>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/snap.svg.js"></script>
+	
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/generate.js"></script>
+	
+	<script type="text/javascript" src="js/word.js"></script>
+	<script type="text/javascript" src="js/tone.js"></script>
+	<script type="text/javascript" src="js/colorBase.js"></script>
+
+	<script type="text/javascript" src="js/poem.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<style   media="print">
+	  .Noprint{display:none;}
+	</style>
+</head>
+<body>
+	<button id="showBtn1" class="Noprint">X</button>
+	
+	<div class="control">
+	<textarea id="inp1" class="Noprint"></textarea>
+	<button id="btn1" class="Noprint">FIND A POEM</button>
+	<button id="btn2" class="Noprint">MAKE</button>
+	</div>
+	<p id="gushici"></p>
+	
+	
+	<div id="giveBox" class="Noprint">
+		<div id="getChinese">
+			
+			<ul>
+
+			</ul>
+			<div id="showContent" class="Noprint">
+
+			</div>
+		</div>
+		<button id="showBtn2" class="Noprint">X</button>
+	</div>
+
+	
+
+	<!--startprint1-->
+	<svg id="svg1">
+		
+	</svg>
+
+	<!--endtprint1-->
+
+</body>
+</html>

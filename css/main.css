@@ -1,0 +1,230 @@
+body {
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  padding-bottom: 100px;
+}
+body::-webkit-scrollbar,
+#giveBox ul::-webkit-scrollbar {
+  width: 0.1em;
+  height: 1px;
+}
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+body::-webkit-scrollbar-thumb,
+#giveBox ul::-webkit-scrollbar-thumb {
+  background-color: red;
+  outline: 1px solid slategrey;
+}
+.control {
+  position: absolute;
+  left: 30%;
+  top: 40%;
+  width: 250px;
+}
+#inp1 {
+  height: 20px;
+  margin-left: 10px;
+  width: 250px;
+  background-color: grey;
+  color: #0c032f;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 2px;
+  border: 3px solid grey;
+  float: left;
+}
+#btn1,
+#btn2 {
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid grey;
+  float: left;
+}
+.showValue {
+  display: inline-block;
+}
+.btn-pause {
+  background-color: red;
+}
+.btn-render {
+  background-color: blue;
+}
+.btn-auto {
+  background-color: green;
+}
+.btn-reC {
+  margin-left: 20px;
+}
+.btn-slider {
+  margin-left: 20px;
+  transform: translateY(3px);
+}
+#showBtn1 {
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+  position: fixed;
+  right: 10px;
+  top: 15px;
+  background-color: grey;
+}
+#showBtn1:before {
+  display: block;
+  position: absolute;
+  right: 80px;
+  width: 180px;
+  top: 15px;
+  color: #EDC329;
+  content: 'Dont know how to type Chinese? Find some Chinese Poem';
+}
+#showBtn1:hover {
+  background-color: #EDC329;
+}
+#giveBox {
+  z-index: 2;
+  background-color: #EDC329;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 40%;
+  height: 100%;
+}
+#giveBox #showBtn2 {
+  margin: 17px 7px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  background-color: #EDC329;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#giveBox #showBtn2:hover {
+  background-color: white;
+}
+#open {
+  text-decoration: none;
+  float: right;
+  clear: both;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 50px;
+  background-color: #EDC329;
+}
+#getChinese ul {
+  display: block;
+  text-decoration: none;
+  clear: both;
+  color: #0c032f;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid white;
+}
+#getChinese ul li {
+  color: #0c032f;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 2px 0px;
+  vertical-align: top;
+  float: left;
+  width: 95%;
+  clear: both;
+  font-size: 0.7em;
+}
+#getChinese ul li:hover {
+  background-color: white;
+}
+#getChinese ul li a {
+  color: #0c032f;
+  text-decoration: none;
+}
+#getChinese ul li a:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: left;
+  visibility: hidden;
+}
+#getChinese ul li .poemText,
+#getChinese ul li .poemTrans {
+  display: inline-block;
+  vertical-align: top;
+}
+#getChinese ul li .poemText:after,
+#getChinese ul li .poemTrans:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: left;
+  visibility: hidden;
+}
+#getChinese #showContent {
+  border: 1px solid white;
+  margin: 10px;
+  margin-top: 0;
+  padding: 10px;
+  font-size: 0.8em;
+  padding-bottom: 50px;
+  width: 80%;
+  color: white;
+  overflow: hidden;
+  vertical-align: top;
+}
+#getChinese #showContent::-webkit-scrollbar,
+#getChinese #showContent #giveBox ul::-webkit-scrollbar {
+  width: 0.1em;
+}
+#getChinese #showContent::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+#getChinese #showContent::-webkit-scrollbar-thumb,
+#getChinese #showContent #giveBox ul::-webkit-scrollbar-thumb {
+  background-color: red;
+  outline: 1px solid slategrey;
+}
+#getChinese #showContent .poemContent {
+  margin: 20px;
+  float: left;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#getChinese #showContent .poemContent .poemText {
+  width: 30%;
+  float: left;
+  color: #0c032f;
+  font-size: 1em;
+}
+#getChinese #showContent .poemContent .poemTrans {
+  width: 50%;
+  float: left;
+  margin-left: 20px;
+  font-size: 0.8em;
+  color: #0c032f;
+}
+.printWord {
+  width: 70%;
+  color: grey;
+  font-size: .8em;
+}
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+.fH:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: left;
+  visibility: hidden;
+}
