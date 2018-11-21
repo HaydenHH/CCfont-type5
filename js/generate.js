@@ -575,7 +575,7 @@ $(function(){
 			
 
 			//createShapeGroup(x,i,all,type,sym,pT,pS)
-			for(var i=0,l=50;i<l;i++){
+			for(var i=0,l=48;i<l;i++){
 				createShapeGroup(
 					 	sB(CB,2), 		//basic shape
 					 	i, 		//index
