@@ -1,0 +1,35 @@
+<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1159 821">
+  <title>T2</title>
+  <g id="T2M">
+    <rect width="164" height="164" style="fill: #2d4532"/>
+    <rect x="199" width="164" height="164" style="fill: #779b79"/>
+    <rect x="398" width="164" height="164" style="fill: #6bc2c2"/>
+    <rect x="597" width="164" height="164" style="fill: #1b7c84"/>
+    <rect x="796" width="164" height="164" style="fill: #bcdee7"/>
+    <rect x="995" width="164" height="164" style="fill: #c6f4f2"/>
+  </g>
+  <g id="T2N">
+    <rect y="448" width="164" height="164" style="fill: #074527"/>
+    <rect x="199" y="448" width="164" height="164" style="fill: #839b42"/>
+    <rect x="398" y="448" width="164" height="164" style="fill: #2fc23b"/>
+    <rect x="597" y="448" width="164" height="164" style="fill: #008413"/>
+    <rect x="796" y="448" width="164" height="164" style="fill: #82e79c"/>
+    <rect x="995" y="448" width="164" height="164" style="fill: #a8f4ab"/>
+  </g>
+  <g id="T2D">
+    <rect y="657" width="164" height="164" style="fill: #370c00"/>
+    <rect x="199" y="657" width="164" height="164" style="fill: #ffe6ec"/>
+    <rect x="398" y="657" width="164" height="164" style="fill: #003ca8"/>
+    <rect x="597" y="657" width="164" height="164" style="fill: #003e5a"/>
+    <rect x="796" y="657" width="164" height="164" style="fill: #ffc555"/>
+    <rect x="995" y="657" width="164" height="164" style="fill: #3b4100"/>
+  </g>
+  <g id="T2G">
+    <rect y="220" width="164" height="164" style="fill: #00c3aa"/>
+    <rect x="199" y="220" width="164" height="164" style="fill: #ff7332"/>
+    <rect x="398" y="220" width="164" height="164" style="fill: #a1cdda"/>
+    <rect x="597" y="220" width="164" height="164" style="fill: #00b34d"/>
+    <rect x="796" y="220" width="164" height="164" style="fill: #b2f380"/>
+    <rect x="995" y="220" width="164" height="164" style="fill: #3c78ff"/>
+  </g>
+</svg>

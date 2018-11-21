@@ -1,0 +1,35 @@
+<svg id="T3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 877 651">
+  <title>T3</title>
+  <g id="T3N">
+    <rect y="524" width="127" height="127" style="fill: #2b2b2c"/>
+    <rect x="150" y="524" width="127" height="127" style="fill: #434157"/>
+    <rect x="300" y="524" width="127" height="127" style="fill: #9168a2"/>
+    <rect x="450" y="524" width="127" height="127" style="fill: #ea568b"/>
+    <rect x="600" y="524" width="127" height="127" style="fill: #a60b51"/>
+    <rect x="750" y="524" width="127" height="127" style="fill: #631da1"/>
+  </g>
+  <g id="T3D">
+    <rect y="354" width="127" height="127" style="fill: #1a1f17"/>
+    <rect x="150" y="354" width="127" height="127" style="fill: #2e3357"/>
+    <rect x="300" y="354" width="127" height="127" style="fill: #a26e60"/>
+    <rect x="450" y="354" width="127" height="127" style="fill: #f7d100"/>
+    <rect x="600" y="354" width="127" height="127" style="fill: #e8a57d"/>
+    <rect x="750" y="354" width="127" height="127" style="fill: #bb5821"/>
+  </g>
+  <g id="T3M">
+    <rect width="127" height="127" style="fill: #2c151b"/>
+    <rect x="150" width="127" height="127" style="fill: #572236"/>
+    <rect x="300" width="127" height="127" style="fill: #a2746e"/>
+    <rect x="450" width="127" height="127" style="fill: #ea9138"/>
+    <rect x="600" width="127" height="127" style="fill: #a64d01"/>
+    <rect x="750" width="127" height="127" style="fill: #bb2d01"/>
+  </g>
+  <g id="T3G">
+    <rect y="177" width="127" height="127" style="fill: #35302e"/>
+    <rect x="150" y="177" width="127" height="127" style="fill: #60534e"/>
+    <rect x="300" y="177" width="127" height="127" style="fill: #ab8e71"/>
+    <rect x="450" y="177" width="127" height="127" style="fill: #f3e8ae"/>
+    <rect x="600" y="177" width="127" height="127" style="fill: #af9d54"/>
+    <rect x="750" y="177" width="127" height="127" style="fill: #c4a05e"/>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1159 164">
+  <defs>
+    <style>
+      .a {
+        fill: #332945;
+      }
+
+      .b {
+        fill: #6e9b9b;
+      }
+
+      .c {
+        fill: #c26278;
+      }
+
+      .d {
+        fill: #845a2a;
+      }
+
+      .e {
+        fill: #e7a09d;
+      }
+
+      .f {
+        fill: #f4cbb6;
+      }
+    </style>
+  </defs>
+  <title>T2N</title>
+  <g>
+    <rect class="a" width="164" height="164"/>
+    <rect class="b" x="199" width="164" height="164"/>
+    <rect class="c" x="398" width="164" height="164"/>
+    <rect class="d" x="597" width="164" height="164"/>
+    <rect class="e" x="796" width="164" height="164"/>
+    <rect class="f" x="995" width="164" height="164"/>
+  </g>
+</svg>

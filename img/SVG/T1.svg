@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1571 206">
+  <defs>
+    <style>
+      .a {
+        fill: #aef56f;
+      }
+
+      .b {
+        fill: #547a56;
+      }
+
+      .c {
+        fill: #bcf2e8;
+      }
+
+      .d {
+        fill: #f2eebf;
+      }
+
+      .e {
+        fill: #c1ace1;
+      }
+
+      .f {
+        fill: #785c7d;
+      }
+    </style>
+  </defs>
+  <title>未标题-4</title>
+  <rect class="a" width="206" height="206"/>
+  <rect class="b" x="273" width="206" height="206"/>
+  <rect class="c" x="546" width="206" height="206"/>
+  <rect class="d" x="819" width="206" height="206"/>
+  <rect class="e" x="1092" width="206" height="206"/>
+  <rect class="f" x="1365" width="206" height="206"/>
+</svg>

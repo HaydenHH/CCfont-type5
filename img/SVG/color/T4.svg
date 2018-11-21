@@ -1,0 +1,35 @@
+<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 663">
+  <title>T4</title>
+  <g id="T4G">
+    <rect width="155" height="132" style="fill: #79b5d7"/>
+    <rect x="189" width="155" height="132" style="fill: #c9d3de"/>
+    <rect x="378" width="155" height="132" style="fill: #6585aa"/>
+    <rect x="567" width="155" height="132" style="fill: #2b3d58"/>
+    <rect x="945" width="155" height="132" style="fill: #eeeff3"/>
+    <rect x="748" width="155" height="132" style="fill: #f8f9ee"/>
+  </g>
+  <g id="T4M">
+    <rect y="177" width="155" height="132" style="fill: #c8e9f4"/>
+    <rect x="189" y="177" width="155" height="132" style="fill: #ecedd6"/>
+    <rect x="378" y="177" width="155" height="132" style="fill: #a2bca8"/>
+    <rect x="567" y="177" width="155" height="132" style="fill: #90927f"/>
+    <rect x="945" y="177" width="155" height="132" style="fill: #86c9ff"/>
+    <rect x="748" y="177" width="155" height="132" style="fill: #cfc6c5"/>
+  </g>
+  <g id="T4D">
+    <rect y="354" width="155" height="132" style="fill: #6bbff5"/>
+    <rect x="189" y="354" width="155" height="132" style="fill: #e6ee46"/>
+    <rect x="378" y="354" width="155" height="132" style="fill: #517138"/>
+    <rect x="567" y="354" width="155" height="132" style="fill: #d6e8e9"/>
+    <rect x="945" y="354" width="155" height="132" style="fill: #008dff"/>
+    <rect x="748" y="354" width="155" height="132" style="fill: #d05848"/>
+  </g>
+  <g id="T4N">
+    <rect y="531" width="155" height="132" style="fill: #30566f"/>
+    <rect x="189" y="531" width="155" height="132" style="fill: #101b00"/>
+    <rect x="378" y="531" width="155" height="132" style="fill: #271c59"/>
+    <rect x="567" y="531" width="155" height="132" style="fill: #939db8"/>
+    <rect x="945" y="531" width="155" height="132" style="fill: #004379"/>
+    <rect x="748" y="531" width="155" height="132" style="fill: #e05900"/>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1653.821 152.65">
+  <defs>
+    <style>
+      .a {
+        fill: #c09f71;
+      }
+
+      .b {
+        fill: #d1945e;
+      }
+
+      .c {
+        fill: #ffcc56;
+      }
+
+      .d {
+        fill: #ffe2c2;
+      }
+
+      .e {
+        fill: #e0ce62;
+      }
+
+      .f {
+        fill: #c2b8a9;
+      }
+
+      .g {
+        fill: #a99ccc;
+      }
+
+      .h {
+        fill: #cec9ad;
+      }
+
+      .i {
+        fill: #d5a377;
+      }
+    </style>
+  </defs>
+  <title>资源 2</title>
+  <g>
+    <rect class="a" x="374.025" width="168.84" height="152.65" transform="translate(916.889 152.65) rotate(180)"/>
+    <rect class="b" x="561.694" width="168.84" height="152.65" transform="translate(1292.228 152.65) rotate(180)"/>
+    <rect class="c" x="748.049" width="168.84" height="152.65" transform="translate(1664.939 152.65) rotate(180)"/>
+    <rect class="d" width="168.84" height="152.65" transform="translate(168.84 152.65) rotate(180)"/>
+    <rect class="e" x="926.689" width="168.84" height="152.65" transform="translate(2022.219 152.65) rotate(180)"/>
+    <rect class="f" x="1287.081" width="168.84" height="152.65" transform="translate(2743.002 152.65) rotate(180)"/>
+    <rect class="g" x="1484.982" width="168.84" height="152.65" transform="translate(3138.803 152.65) rotate(180)"/>
+    <rect class="h" x="1105.329" width="168.84" height="152.65" transform="translate(2379.499 152.65) rotate(180)"/>
+    <rect class="i" x="186.355" width="168.84" height="152.65" transform="translate(541.551 152.65) rotate(180)"/>
+  </g>
+</svg>
