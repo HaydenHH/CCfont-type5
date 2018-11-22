@@ -555,7 +555,7 @@ $(function(){
 
 		var eleCount = d.length //键入的数量
 
-		var US = ['B2']
+		var US = ['B2','N1','N2','N3']
 		//var US = ['N3','N1','N2','B2']
 		//var US = ['N3','N1','N2','B2']
 		//var US = ['N3','N1','N2','B2']    //临时选用的基础形状数组
@@ -571,13 +571,16 @@ $(function(){
 
 				for (var i = 0; i < eleCount; i++) {
 
-					lo(basicG[2].na)
+
 					for(var ii=0,l=basicG.length;ii<l;ii++){
-							if(basicG[ii].na == uC[rNF(uC.length)]){
+						for(var iii=0,lll=uC.length;iii<lll;iii++){
+								if(basicG[ii].na == uC[rNF(uC.length)]){
 								var out = basicG[ii][rNF(basicG[ii].length)]
 								basic[i] = out.shape
 
+							}
 						}
+
 						// for(var iii=0,lll=uC.length;iii<lll;iii++){
 						// 	if(basicG[ii].na == uC[iii]){
 						// 		var out = basicG[ii][rNF(basicG[ii].length)]
