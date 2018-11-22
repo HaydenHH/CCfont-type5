@@ -1,41 +1,47 @@
 $(function(){
 	
 	var s = Snap('#svg1').attr({
-		width:1440,
-		height:2000,
-		viewBox: '-20 0 1700 2300'
+		width:window.screen.width,
+		height:1000,
+		viewBox: '-20 0 '  + window.screen.width  +' 1000'
 	})
 	var p
 	var ELE = new Array
+
 
 	var basicG = new Array
 	var CBL = new Array
 	var CB = new Object
 
-	var B2 = new Array 
+	var BO = new Array
+	
 	var BB = new Object
+
+	var patterList = new Array
+	var PaL = new Array 
+	var PaI = new Object
 	// -------------load SVG basic--------------------------load SVG basic--------------------------load SVG basic-------------
 
-	Snap.load("img/SVG/su.svg",function(su){
-		s.append(su)
+	// Snap.load("img/SVG/su.svg",function(su){
+	// 	s.append(su)
 
-		 su01 = s.select('#su01')
-		 su02 = s.select('#su02')
-		 su03 = s.select('#su03')
-		 basicG.push(su01,su02,su03)
+	// 	 su01 = s.select('#su01')
+	// 	 su02 = s.select('#su02')
+	// 	 su03 = s.select('#su03')
+	// 	 basicG.push(su01,su02,su03)
 		
-	})
+	// })
 
-	Snap.load("img/SVG/lb1.svg",function(lb1){
-		s.append(lb1)
-		lb1 = s.select('#lb1')
-		var lbG = lb1.selectAll('.eleG')
+	// Snap.load("img/SVG/lb1.svg",function(lb1){
+	// 	s.append(lb1)
+	// 	lb1 = s.select('#lb1')
+	// 	var lbG = lb1.selectAll('.eleG')
 
 		
-		 for(var i=0,l=lbG.length;i<l;i++){
-		 	basicG.push(lbG[i])
-		 }
-	})
+	// 	 for(var i=0,l=lbG.length;i<l;i++){
+	// 	 	basicG.push(lbG[i])
+	// 	 }
+	// })
 
 	
 
@@ -78,9 +84,9 @@ $(function(){
 
 		Snap.load("img/SVG/" + name + ".svg",function(x){
 			s.select('defs').append(x)
-			
+		
 			var eleL = x.selectAll('g')
-
+			var BList = new Array 
 			
 				
 				var typeID = name
@@ -88,19 +94,53 @@ $(function(){
 					var BB = new Object
 					BB.shape = eleL[ii]
 					BB.type = typeID
-					BB.id = 'n' + ii
+					BB.num = 'n' + ii
 					
-					B2[ii] = BB
-					B2.id  = name
+					BList[ii] = BB
+					BList.na  = name
 				}
 				
-				basicG.push(B2)
 				
+				basicG.push(BList)
 		})
 		
 		
 	}
 	getBasicFromSVG('B2')
+	getBasicFromSVG('N2')
+	getBasicFromSVG('N1')
+	getBasicFromSVG('N3')
+
+	function getPatternFromSVG(name){
+		
+
+		Snap.load("img/SVG/" + name + ".svg",function(x){
+
+			s.select('defs').append(x)
+			
+			var eleL = x.selectAll('g')
+			
+				
+				var typeID = name
+				
+				for (var ii = 0; ii < eleL.length; ii++) {
+					var PaI = new Object
+					PaI.shape = eleL[ii]
+					PaI.type = typeID
+					PaI.num = 'PN' + ii
+					
+					PaL[ii] = PaI
+					PaL.id = name
+				}
+				patterList.push(PaL)
+
+				
+				
+
+				})
+	}
+	getPatternFromSVG('pattern')
+
 
 
 	// -------------load SVG basic--------------------------load SVG basic--------------------------load SVG basic-------------
@@ -128,6 +168,9 @@ $(function(){
 		var wordAttr = getAttrOfWord()
 
 		sortData(wordAttr)
+		//window.print()
+
+
 
 	})
 
@@ -153,11 +196,9 @@ $(function(){
 		})
 	}
 
-	
-
 	function getAttrOfWord(){
 		var all = type.val().replace(/\s+/g,"，")
-
+		document.title = all
 		allStroke.splice(0)
 		allTone.splice(0)
 		allRadicals.splice(0)
@@ -232,6 +273,17 @@ $(function(){
 
 	       	}//每个输入的字
 
+	   	}
+	   	if(myObj == 0){
+
+						var userType = new Object()
+						userType.word = '无'
+						userType.getTone = parseInt(0);
+						userType.getStro = parseInt(1);
+						userType.getRadi = '无';
+
+						myObj.push(userType)
+					//非法字符
 	   	}
 	   	// console.log(allTone)
 	   	// console.log(allStroke)
@@ -340,13 +392,12 @@ $(function(){
 					uSL.push(ELE[i].bs)
 				}
 
-
 				report.opptionalShapes = sUse
-				report.usedShapes = uni(uSL)
+				//report.usedShapes = uni(uSL)
 				report.colorStyle = cUse.id
 				report.useRadicals = rL
 				report.usedShapeCount = useC
-				report.opptionalShape = shapeC
+				report.opptionalShapeCount = shapeC
 				report.StyleList = CBL
 
 				return console.log(report)
@@ -354,30 +405,6 @@ $(function(){
 
 	// -----support function----------support function----------support function----------support function-----
 
-	// function gRanEle(arr, x) {
- //    var shuffled = arr.slice(0), i = arr.length, min = i - x, temp, index;
- //    while (i-- > min) {
- //        index = Math.floor((i + 1) * Math.random());
- //        temp = shuffled[index];
- //        shuffled[index] = shuffled[i];
- //        shuffled[i] = temp;
- //    }
- //    return shuffled.slice(min);
-	// }
-
-	function getColorType(){
-
-		var cTL = new Array
-
-		for(var i=0,l=colorBase.length;i<l;i++){
-
-			//cTL[i].type.substring(0, 3) 
-
-			cTL.push(colorBase[i])
-		}
-
-		//console.log(cTL[1].type.substring(0, 3))
-	}
 
 	
 
@@ -421,8 +448,6 @@ $(function(){
 
 			
 		}
-
-
  		
 		function Fcolor(typing){
 		
@@ -485,9 +510,6 @@ $(function(){
 
 		}//返回了选用的颜色序列
 
-		
-		
-
 		function Flocation(typing){
 		//返回偏旁的类别和序列，可用于输出 基本形状
 
@@ -530,35 +552,37 @@ $(function(){
 				return environUse
 				//返回能识别的数组
 			}
-
-
-
-
 		}
 
 		var eleCount = d.length //键入的数量
 
-		var US = ['B2']   
-
+		var US = ['N3','N1','N2','B2']    //临时选用的基础形状数组
+		var CB = CB(US)
+			var CS = Fcolor(d)
+			var CType = new Object
+			CType.type = CS       //color types
+			CType.c = eleCount   //count of Color type s
+			
 		
-		function CB(uC){
+		function CB(uC){//带入的是 uS 的数组
 				var basic = new Array
-				
 
 				for (var i = 0; i < eleCount; i++) {
 
-					// basic[i] = basicG[rNF(basicG.length)]
-					//basic[i] = B2[rNF(B2.length)].shape
-				
+					
 					for(var ii=0,l=basicG.length;ii<l;ii++){
-						
-						for(var iii=0,lll=uC.length;iii<lll;iii++){
-							if(basicG[ii].id == uC[iii]){
+							if(basicG[ii].na == uC[rNF(uC.length)]){
 								var out = basicG[ii][rNF(basicG[ii].length)]
 								basic[i] = out.shape
 							
-							}
 						}
+						// for(var iii=0,lll=uC.length;iii<lll;iii++){
+						// 	if(basicG[ii].na == uC[iii]){
+						// 		var out = basicG[ii][rNF(basicG[ii].length)]
+						// 		basic[i] = out.shape
+							
+						// 	}
+						// }//这是遍历数组，而不是随机
 					}
 				}
 				return basic
@@ -567,12 +591,6 @@ $(function(){
 
 			//var baseEle = lbG[rNF(lbG.length)]
 
-			var CB = CB(US)
-			var CS = Fcolor(d)
-			var CType = new Object
-			CType.type = CS
-			CType.c = eleCount
-			
 
 			//createShapeGroup(x,i,all,type,sym,pT,pS)
 			for(var i=0,l=48;i<l;i++){
@@ -582,14 +600,15 @@ $(function(){
 					 	d.length,     //总数
 					 	CType,  // color type
 					 	dataCol[rNF(l)].radi, //符号判定
-					 	4, 			//pattern type
+					 	dataCol[rNF(l)].tone, //音调判定
+					 	4,      //  size
+					 	rNF(6), 			//pattern type
 					 	dataCol[rNF(l)].stro 			//pattern ele size
 					 )
-
+				
 				
 			}
 		
-
 		report(eleCount,radiL,CS,Flocation(d))
 
 		}//sort
@@ -606,83 +625,154 @@ $(function(){
 	
 	// ---------------SVG 方法------------------------------SVG 方法------------------------------SVG 方法---------------
 
-	function trans(x,y,r,ori){
+	function trans(x,y,s,r,ori){
 			var m = new Snap.Matrix()
 			m.translate(x,y)
 			m.rotate(r,50,55)
+			m.scale(s,s,50,55)
+			return m 
+		}
+
+	function pM(x,y,s){
+			var m = new Snap.Matrix()
+			m.scale(s,s)
+			m.translate(x,y)
+			
 			return m 
 		}
 
 
 	function createPattern(type,size,pC,count){
 			if(size == NaN){
-				size = 1
+				var size = 1
 			}
-			var size = size + 1
+			if(type == 0){
+				type = 1
+			}
+			var Usize = size + 1
 			//console.log(size)
 
-			if(type==1){
-				var p = s.paper.circle(10,10,size).attr({
-					fill:sC(pC)
-				}).pattern(0,5,15,15)
 
-				return p
-			}else if(type==2){
-				var a = s.paper.circle(10,10,size),
-					b = s.paper.circle(30,40,2*size)
+			function setPat(x1,c){
+				var a = s.paper.use(x1.shape).attr({
+					transform:pM(0,0,0.2)
+				})
+				var b = s.paper.use(x1.shape).attr({
+					transform:pM(c*5,0,0.2),
+					fill:sC(pC),
+					//strokeWidth:10,
+					opacity:0.7,
+					mixBlendMode:'overlay'
+					//stroke:sC(pC)
+				})
 				var p = s.paper.g(a,b).attr({
 					fill:sC(pC)
-				}).pattern(0,0,8*size,8*size)
+					
+				}).pattern(c,c,c*5,c*10)
+
+				return p
+			}
+
+
+			if(type==1){
+
+				var p = s.paper.circle(10,10,Usize).attr({
+					fill:sC(pC)
+				}).pattern(0,5,Usize,Usize)
+				return p
+			}else if(type==2){
+				var a = s.paper.circle(0,10,Usize),
+					b = s.paper.circle(30,40,1.5*Usize)
+				var p = s.paper.g(a,b).attr({
+					fill:sC(pC)
+				}).pattern(0,0,8*Usize,8*Usize)
 
 				return p
 			}else if(type==3){
-				var a = s.paper.rect(0,0,size,size*2)
-				var b = s.paper.rect(0,0,size*0.5,size*2)
+				var a = s.paper.rect(0,0,Usize,Usize*2)
+				var b = s.paper.rect(0,0,Usize*0.5,Usize*2)
 				var p = s.paper.g(a,b).attr({
 					fill:sC(pC)
-				}).pattern(0,0,8*size,8*size)
+				}).pattern(0,0,8*Usize,8*Usize)
 
 				return p
 			}else if(type==4){
-				var a = s.paper.rect(0,0,size*5,size*2)
-				var b = s.paper.rect(20,20,size*5,size*1)
+				var a = s.paper.rect(0,0,Usize*5,Usize*2)
+				var b = s.paper.rect(20,20,Usize*5,Usize*1)
 				var p = s.paper.g(a,b).attr({
 					fill:sC(pC)
-				}).pattern(0,0,5*size,3*size)
+				}).pattern(0,0,5*Usize,3*Usize)
 
 				return p
+			}else if(type==5){
+				var a = s.use(PaL[1].shape)
+				var b = s.use(PaL[1].shape)
+				var p = s.paper.g(a,b).attr({
+					fill:sC(pC)
+				}).pattern(0,0,2*Usize,1*Usize)
+				
+				return p
+			}else if(type == 6){
+					
+				return  setPat(PaL[rNF(PaL.length)],Usize)
 			}
+
 
 	}
 
 
-	function createShapeGroup(x,i,all,type,sym,pT,pS){
-		
+	function createShapeGroup(x,i,all,type,sym,tone,size,pT,pS){
+			
+			function ToneToOpac(X){
+				var opc
+				if(X == 1){
+					var opc = 0.6
+				}else if(X == 2){
+					var opc = 0.9
+				}else if(X == 3){
+					var opc = 0.7
+				}else if(X == 4){
+					var opc = 1
+				}else{
+					var opc = 0.5
+				}
+
+				return opc
+			}
+
 			var r1 = rNF(2),
 				r2 = r1 + rNF(5)
 			var shape = s.use(x).attr({
 		 	fill: sC(type),
-		 	transform: trans(0,0,r1)
+		 	mixBlendMode: 'multiply',
+		 	opacity:ToneToOpac(tone),
+		 	transform: trans(0,0,size,r1)
 		 })
 
-			var stro = s.use(x).attr({
-		 	fill: "none",
-		 	stroke:"grey",
-		 	strokeWidth: 4,
-		 	transform: trans(rN(10),0,r2)
-		 })
+
+			// var stro = s.use(x).attr({
+		 // 	fill: "none",
+		 // 	stroke:"grey",
+		 // 	strokeWidth: 0,
+		 // 	mixBlendMode: 'multiply',
+		 // 	transform: trans(rN(10),0,size,r2)
+		 // })
+
+		 //输出边框。重要
 
 			var pat = s.use(x).attr({
 		 	fill:createPattern(pT,pS,type,all),
-		 	transform: trans(0,0,r1)
+		 	mixBlendMode: 'overlay',
+		 	transform: trans(0,0,size,r1)
 		 })
 
-		ELE[i] = s.paper.g(shape,pat,stro).attr({
-				transform:trans(LyR(i).x,LyR(i).y,0),
+		ELE[i] = s.paper.g(shape,pat).attr({
+				transform:trans(LyR(i).x,LyR(i).y,1,0),
+				mixBlendMode: 'overlay',
 				class:'eleG'
 			})
 
-		//ELE[i].bs = x.node
+		
 			
 		
 

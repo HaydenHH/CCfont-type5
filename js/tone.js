@@ -93,7 +93,7 @@ var locationBank =
 				{
 					"symbol":
 					[
-						"氵",
+						"氵","water","river"
 					],
 					"num":3
 				},

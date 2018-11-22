@@ -17,23 +17,27 @@ body::-webkit-scrollbar-thumb,
   background-color: red;
   outline: 1px solid slategrey;
 }
+#svg1 {
+  margin-top: -20px;
+  z-index: -1;
+}
 .control {
-  position: fixed;
-  right: .5%;
-  top: 40%;
+  position: absolute;
+  left: 40%;
+  top: 300px;
   width: 250px;
 }
 #inp1 {
   height: 20px;
   margin-left: 10px;
   width: 250px;
-  background-color: grey;
+  background-color: rgba(252, 250, 247, 0.2);
   color: #0c032f;
   padding: 10px;
-  font-size: 13px;
-  border-radius: 2px;
-  border: 3px solid grey;
-  float: right;
+  font-size: 15px;
+  border-radius: 20px;
+  border: 1px solid grey;
+  float: left;
 }
 #btn1,
 #btn2 {
