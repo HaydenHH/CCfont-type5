@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
   <defs>
     <style>
-      
+
     </style>
   </defs>
   <title>N22</title>
@@ -54,5 +54,5 @@
     <circle class="c" cx="85.502" cy="81.967" r="56.883"/>
     <path class="a" d="M.087,74.849S80.164,62.392,108.635,1L.087,1.89Z"/>
   </g>
-  <path class="a" d="M1,82.374C12.886-.825,107.972,1,107.972,1h32V142.717H.087Z"/>
+  
 </svg>

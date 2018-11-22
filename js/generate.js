@@ -1,9 +1,10 @@
 $(function(){
-	
+
 	var s = Snap('#svg1').attr({
 		width:window.screen.width,
 		height:1000,
-		viewBox: '-20 0 '  + window.screen.width  +' 1000'
+		viewBox: '-20 0 '  + '1700'  +' 1000',
+		preserveAspectRatio: 'xMidYMax'
 	})
 	var p
 	var ELE = new Array
@@ -14,11 +15,11 @@ $(function(){
 	var CB = new Object
 
 	var BO = new Array
-	
+
 	var BB = new Object
 
 	var patterList = new Array
-	var PaL = new Array 
+	var PaL = new Array
 	var PaI = new Object
 	// -------------load SVG basic--------------------------load SVG basic--------------------------load SVG basic-------------
 
@@ -29,7 +30,7 @@ $(function(){
 	// 	 su02 = s.select('#su02')
 	// 	 su03 = s.select('#su03')
 	// 	 basicG.push(su01,su02,su03)
-		
+
 	// })
 
 	// Snap.load("img/SVG/lb1.svg",function(lb1){
@@ -37,16 +38,16 @@ $(function(){
 	// 	lb1 = s.select('#lb1')
 	// 	var lbG = lb1.selectAll('.eleG')
 
-		
+
 	// 	 for(var i=0,l=lbG.length;i<l;i++){
 	// 	 	basicG.push(lbG[i])
 	// 	 }
 	// })
 
-	
+
 
 	function getColorFromSVG(name){
-		
+
 
 		Snap.load("img/SVG/color/" + name + ".svg",function(x){
 			var typeL = x.node.getElementsByTagName('g')
@@ -64,14 +65,14 @@ $(function(){
 				CB.type = typeID
 				CB.allColor = list
 				CBL.push(CB)
-				
+
 			}
-			
-			
+
+
 		//lo(CBL)
 		})
-		
-		
+
+
 	}
 
 	getColorFromSVG('T4')
@@ -80,31 +81,31 @@ $(function(){
 	getColorFromSVG('T1')
 
 	function getBasicFromSVG(name){
-		
+
 
 		Snap.load("img/SVG/" + name + ".svg",function(x){
 			s.select('defs').append(x)
-		
+
 			var eleL = x.selectAll('g')
-			var BList = new Array 
-			
-				
+			var BList = new Array
+
+
 				var typeID = name
 				for (var ii = 0; ii < eleL.length; ii++) {
 					var BB = new Object
 					BB.shape = eleL[ii]
 					BB.type = typeID
 					BB.num = 'n' + ii
-					
+
 					BList[ii] = BB
 					BList.na  = name
 				}
-				
-				
+
+
 				basicG.push(BList)
 		})
-		
-		
+
+
 	}
 	getBasicFromSVG('B2')
 	getBasicFromSVG('N2')
@@ -112,30 +113,30 @@ $(function(){
 	getBasicFromSVG('N3')
 
 	function getPatternFromSVG(name){
-		
+
 
 		Snap.load("img/SVG/" + name + ".svg",function(x){
 
 			s.select('defs').append(x)
-			
+
 			var eleL = x.selectAll('g')
-			
-				
+
+
 				var typeID = name
-				
+
 				for (var ii = 0; ii < eleL.length; ii++) {
 					var PaI = new Object
 					PaI.shape = eleL[ii]
 					PaI.type = typeID
 					PaI.num = 'PN' + ii
-					
+
 					PaL[ii] = PaI
 					PaL.id = name
 				}
 				patterList.push(PaL)
 
-				
-				
+
+
 
 				})
 	}
@@ -144,10 +145,10 @@ $(function(){
 
 
 	// -------------load SVG basic--------------------------load SVG basic--------------------------load SVG basic-------------
-	
+
 	var result, poAry
-	var userType 
-	var 
+	var userType
+	var
 		allStroke = new Array(),
 		allTone = new Array(),
 		allRadicals = new Array(),
@@ -155,13 +156,13 @@ $(function(){
 
 	var type = $("#inp1");
 
-	
 
-	
+
+
 	$('#btn1').click(function(event) {
 
 		getAPoem()
-		
+
 	});
 
 	$('#btn2').click(function(event){
@@ -175,21 +176,21 @@ $(function(){
 	})
 
 
-	
+
 	function getAPoem(){
 
 		$.ajax({
 			url: 'https://api.gushi.ci/all.json',
 			type: 'GET'
-			
+
 		})
 		.done(function(data) {
 			poAry =  data.content
 			//$('#gushici').text(content)
 			type.val(poAry)
 			//console.log(poAry)
-			
-			
+
+
 		})
 		.fail(function() {
 			console.log("error");
@@ -203,7 +204,7 @@ $(function(){
 		allTone.splice(0)
 		allRadicals.splice(0)
 		myObj.splice(0)
-		
+
 		for(var count = 0, allword = all.length; count < allword; count++){
 	       		for (var bankIndex = 0, bank = wordBank.length; bankIndex < bank; bankIndex++){
 	       			if (wordBank[bankIndex].word == all[count]) {
@@ -216,8 +217,8 @@ $(function(){
 	       			     allStroke.push(wordBank[bankIndex].strokes);
 	       			     allRadicals.push(wordBank[bankIndex].radicals)
 
-	       			   
-	       			   
+
+
 	       			   if(wordBank[bankIndex].radicals == 'symbol'){
 	       			   		//renderSymbol('symbol', symbolIndex)
 	       			   }
@@ -244,7 +245,7 @@ $(function(){
 	       					    }
 	       					}
 	       				}else{
-	       					allTone.push('10')
+	       					allTone.push('1')
 	       				}
 
 
@@ -255,9 +256,9 @@ $(function(){
 					var thisRadi = allRadicals[count];
 					var thisCount = [count + 1]
 
-					
 
-					
+
+
 					var userType = new Object()
 					userType.word = all[count]
 					userType.getTone = parseInt(thisTone);
@@ -274,20 +275,18 @@ $(function(){
 	       	}//每个输入的字
 
 	   	}
-	   	if(myObj == 0){
+
+	   	if(myObj.length == 0){
 
 						var userType = new Object()
 						userType.word = '无'
 						userType.getTone = parseInt(0);
-						userType.getStro = parseInt(1);
+						userType.getStro = parseInt(3);
 						userType.getRadi = '无';
 
 						myObj.push(userType)
 					//非法字符
 	   	}
-	   	// console.log(allTone)
-	   	// console.log(allStroke)
-	   	// console.log(allRadicals)
 
 	   	return myObj
 	}
@@ -302,12 +301,12 @@ $(function(){
 
 
 					for(var i=0,l = count+1;i<l;i++){
-						
+
 						useC.push(c[rNF(c.length)])
 
 					}
 
-					
+
 					return useC[rNF(useC.length)]
 				}
 			}
@@ -346,12 +345,12 @@ $(function(){
 				}
 
 				var usedBasic = basicUseRange[rNF(basicUseRange.length)]
-				
+
 
 				return usedBasic
 			}//从待选区间选取基本形状
 
-	
+
 
 	// -----support function----------support function----------support function----------support function-----
 
@@ -379,7 +378,7 @@ $(function(){
 
 	function report(shapeC,rL,cUse,sUse){
 
-				var report = new Object 
+				var report = new Object
 
 				if(shapeC < 4){
 					var useC = shapeC
@@ -406,7 +405,7 @@ $(function(){
 	// -----support function----------support function----------support function----------support function-----
 
 
-	
+
 
 	function sortData(d){
 		//s.selectAll('.suG').remove()
@@ -430,7 +429,7 @@ $(function(){
 			toneL.push(tone)
 			wordL.push(word)
 
-			
+
 		}
 
 		var dataCol = new Array
@@ -446,11 +445,11 @@ $(function(){
 
 			//console.log(dataEle)
 
-			
+
 		}
- 		
+
 		function Fcolor(typing){
-		
+
 			var seasonUse = new Array
 			var timeUse = new Array
 			var Fcolor = new Object
@@ -464,7 +463,7 @@ $(function(){
 							seasonUse.push(seasonBank.season[ia].num)
 						}
 					}
-					
+
 				}
 
 				for(var iaa=0,laa=seasonBank.time.length;iaa<laa;iaa++){
@@ -473,7 +472,7 @@ $(function(){
 							timeUse.push(seasonBank.time[iaa].num)
 						}
 					}
-					
+
 				}
 			}
 			var X
@@ -487,14 +486,14 @@ $(function(){
 			}
 
 			if(timeUse == 0){
-				
+
 				var X = 'G'
 
 			}else{
 				Fcolor.time = timeUse[rNF(timeUse.length)]
 			}
 
-			
+
 			if(Fcolor.time == 1){
 				var X = 'M'
 			}else if(Fcolor.time == 2){
@@ -503,7 +502,7 @@ $(function(){
 			else if(Fcolor.time == 3){
 				var X = 'N'
 			}
-			
+
 			Fcolor.id = 'T' + Fcolor.season + X
 
 			return Fcolor
@@ -515,7 +514,7 @@ $(function(){
 
 			var environUse = new Array
 			var objectUse = new Array
-			
+
 
 			//遍历键入字符,判断季节，输出到列表
 
@@ -527,7 +526,7 @@ $(function(){
 					for(var ib=0,lb=locationBank[ia].attr.length;ib<lb;ib++){
 						for(var ic=0,lc=locationBank[ia].attr[ib].symbol.length;ic<lc;ic++){
 							if(locationBank[ia].attr[ib].symbol[ic]  ==  d[i].getRadi){
-							
+
 							var type = locationBank[ia].type
 							var num = locationBank[ia].attr[ib].num
 							FLoc.id = type + num
@@ -537,17 +536,17 @@ $(function(){
 					}
 				}
 			}//遍历50字,输出50个属性到数组
-
-			if(environUse == 0){
+			if(environUse.length == 0){
 				console.log('no defined words were found, chose random attribute')
 				var ranLoc = new Object
-				
-				ranLoc.type = locationBank[rNF(locationBank.length)].type
-				var ranTAttr = locationBank[rNF(locationBank.length)].attr
+				var ranType = locationBank[rNF(locationBank.length)]
+				ranLoc.type = ranType.type
+				var ranTAttr = ranType.attr
 				ranLoc.num = ranTAttr[rNF(ranTAttr.length)].num
 				ranLoc.id = ranLoc.type + ranLoc.num
+
 				return ranLoc.id
-				
+
 			}else{
 				return environUse
 				//返回能识别的数组
@@ -556,31 +555,34 @@ $(function(){
 
 		var eleCount = d.length //键入的数量
 
-		var US = ['N3','N1','N2','B2']    //临时选用的基础形状数组
-		var CB = CB(US)
+		var US = ['B2']
+		//var US = ['N3','N1','N2','B2']
+		//var US = ['N3','N1','N2','B2']
+		//var US = ['N3','N1','N2','B2']    //临时选用的基础形状数组
+		var CB = chooseABasicSL(US)
 			var CS = Fcolor(d)
 			var CType = new Object
 			CType.type = CS       //color types
 			CType.c = eleCount   //count of Color type s
-			
-		
-		function CB(uC){//带入的是 uS 的数组
+
+
+		function chooseABasicSL(uC){//带入的是 uS 的数组
 				var basic = new Array
 
 				for (var i = 0; i < eleCount; i++) {
 
-					
+					lo(basicG[2].na)
 					for(var ii=0,l=basicG.length;ii<l;ii++){
 							if(basicG[ii].na == uC[rNF(uC.length)]){
 								var out = basicG[ii][rNF(basicG[ii].length)]
 								basic[i] = out.shape
-							
+
 						}
 						// for(var iii=0,lll=uC.length;iii<lll;iii++){
 						// 	if(basicG[ii].na == uC[iii]){
 						// 		var out = basicG[ii][rNF(basicG[ii].length)]
 						// 		basic[i] = out.shape
-							
+
 						// 	}
 						// }//这是遍历数组，而不是随机
 					}
@@ -605,24 +607,24 @@ $(function(){
 					 	rNF(6), 			//pattern type
 					 	dataCol[rNF(l)].stro 			//pattern ele size
 					 )
-				
-				
+
+
 			}
-		
+
 		report(eleCount,radiL,CS,Flocation(d))
 
 		}//sort
 
 
-		
 
-		
 
-		
-		
 
-	
-	
+
+
+
+
+
+
 	// ---------------SVG 方法------------------------------SVG 方法------------------------------SVG 方法---------------
 
 	function trans(x,y,s,r,ori){
@@ -630,15 +632,15 @@ $(function(){
 			m.translate(x,y)
 			m.rotate(r,50,55)
 			m.scale(s,s,50,55)
-			return m 
+			return m
 		}
 
 	function pM(x,y,s){
 			var m = new Snap.Matrix()
 			m.scale(s,s)
 			m.translate(x,y)
-			
-			return m 
+
+			return m
 		}
 
 
@@ -667,7 +669,7 @@ $(function(){
 				})
 				var p = s.paper.g(a,b).attr({
 					fill:sC(pC)
-					
+
 				}).pattern(c,c,c*5,c*10)
 
 				return p
@@ -710,10 +712,10 @@ $(function(){
 				var p = s.paper.g(a,b).attr({
 					fill:sC(pC)
 				}).pattern(0,0,2*Usize,1*Usize)
-				
+
 				return p
 			}else if(type == 6){
-					
+
 				return  setPat(PaL[rNF(PaL.length)],Usize)
 			}
 
@@ -722,7 +724,7 @@ $(function(){
 
 
 	function createShapeGroup(x,i,all,type,sym,tone,size,pT,pS){
-			
+
 			function ToneToOpac(X){
 				var opc
 				if(X == 1){
@@ -772,28 +774,28 @@ $(function(){
 				class:'eleG'
 			})
 
-		
-			
-		
+
+
+
 
 	}
 
-	
 
 
-	
+
+
 
 
 
 	function LyR(index){
 		space = 160 //每个字的间距
-		
-		
+
+
 		lineHeight = 200 //行距
 
 		rowWord = 8  //每行的字数
 		row = Math.floor(index/rowWord)
-		var X = index*space-row*rowWord*space 
+		var X = index*space-row*rowWord*space
 		var Y = row*lineHeight
 		var cord = new Object
 		cord.x = X
@@ -811,9 +813,3 @@ $(function(){
 
 
 })
-
-
-
-
-
-
