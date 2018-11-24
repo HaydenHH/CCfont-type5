@@ -2,10 +2,20 @@ $(function(){
 
 	var s = Snap('#svg1').attr({
 		width:window.screen.width,
-		height:1000,
-		viewBox: '-20 0 '  + '1700'  +' 1000',
-		preserveAspectRatio: 'xMidYMax'
+		height:window.screen.height,
+		viewBox: '-20 0 '  + 1440  + ' ' + 1000,
+		preserveAspectRatio: 'xMinYMid slice'
 	})
+
+	window.onresize = function(event) {
+		s.attr({
+			width:window.screen.width,
+			height:window.screen.height
+		})
+	};
+
+	
+
 	var p
 	var ELE = new Array
 
@@ -607,7 +617,7 @@ $(function(){
 					 	dataCol[rNF(l)].radi, //符号判定
 					 	dataCol[rNF(l)].tone, //音调判定
 					 	4,      //  size
-					 	rNF(6), 			//pattern type
+					 	8, 			//pattern type
 					 	dataCol[rNF(l)].stro 			//pattern ele size
 					 )
 
@@ -647,7 +657,7 @@ $(function(){
 		}
 
 
-	function createPattern(type,size,pC,count){
+	function createPattern(type,size,pC,count,index,tone){
 			if(size == NaN){
 				var size = 1
 			}
@@ -720,7 +730,22 @@ $(function(){
 			}else if(type == 6){
 
 				return  setPat(PaL[rNF(PaL.length)],Usize)
+			}else if(type == 7){
+				var c = s.paper.circle(0.3,0.3,0.3).attr({
+					fill:sC(pC)
+				}).pattern(0,0,index*0.01+1,index*0.01+1)
+				return c
+				//网点图
+			}else if(type == 8){
+				var a = s.paper.circle(0.4,0.4,0.2)
+				var b = s.paper.circle(0.8,0.8,0.2)
+				var c = s.g(a,b).attr({
+					fill:sC(pC)
+				}).pattern(0.2,0.2,1,1)
+				return c
+				//网点图
 			}
+
 
 
 	}
@@ -766,7 +791,7 @@ $(function(){
 		 //输出边框。重要
 
 			var pat = s.use(x).attr({
-		 	fill:createPattern(pT,pS,type,all),
+		 	fill:createPattern(pT,pS,type,all,i,tone),
 		 	mixBlendMode: 'overlay',
 		 	transform: trans(0,0,size,r1)
 		 })
